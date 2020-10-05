@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+time="15"
+red="\033[1;31m"
+yellow="\033[1;33m"
+blue="\033[0;94m"
+action="\033[37;44m"
+reset="\033[0m"
+keystrokefile="keystrokes.txt"
+
+echo ""
+echo -e "${blue}When you press ENTER, the file ${yellow}${1}${blue} will now be opened for ${yellow}${time}${blue} seconds...${reset}"
+echo ""
+
+sleep 1
+echo -e "${action}Press ENTER NOW ...${reset}"
+read first
+
+nvim -c "redraw" -c "sleep $time" -c "q!" "$1"
+
+sleep 1
+echo -e "${blue}NOW the file will re-open, but all your keystrokes will be captured to the file ${yellow}${keystrokefile}${reset}"
+echo ""
+
+sleep 2
+echo -e "${red}PLEASE COVER YOUR SCREEN and when you are ready press ENTER to re-open the file${reset}"
+echo ""
+
+sleep 1
+echo -e "${action}Press ENTER NOW ...${reset}"
+read second
+
+nvim -w keystrokes.txt "$1"
