@@ -12,50 +12,12 @@
 
 # How to play
 
-Look at index.js for 15 seconds. You may look at the tests for longer.
+There is a simple BASH script that you can use to actually play the game.
 
-You can use this command to open the file and then automatically close it after X seconds:
+The script is called *peak*
 
-```bash
-> timeout 15 vim index.js
-```
+*peak* can be run by passing it a simply file, the file that you wish to look at for 15 seconds and then after covering your screen the file that you wish to work on.
 
-OR even better copy and paste this VimScript function to your .vimrc
-
-```vimscript
-" IMPORTANT only works currently on files in the CWD
-" :call Peak("index.js")
-" Use this function to open the file for 15 seconds then close it
-" giving the player the time to cover their screen and hit ENTER 
-" when the screen is fully covered...
-function! Peak(file)
-    execute 'edit ' . a:file
-    redraw
-    echom "You have 15 seconds to look at the code..."
-    execute 'sleep 15'
-    bd
-    redraw
-    echom "Are you ready to play??"
-    sleep 2
-    echom "Please COVER YOUR SCREEN NOW and press ENTER when you are ready..."
-    sleep 2
-    let l:ans = input("Press Enter to re-open the file... GOOD LUCK")
-    execute 'edit ' . a:file
-endfunction
-```
-
-As the above code (vimscript) says in the comments you can trigger the function by using:
-
-```vimscript
-:call Peak("filename")
-
-:call Peak("index.js")
-```
-
-Then:
-
-```bash
-> vim index.js -w keystrokes.txt
-```
+In the case of this repository that would be ```index.js```
 
 Save and run the tests without looking!
