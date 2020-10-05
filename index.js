@@ -5,7 +5,7 @@
  */
 
 // Level 1
-// Return "hello world"
+// Return "hello world" - ALL LOWERCASE
 function helloWorld() {
 }
 
