@@ -20,4 +20,16 @@ The script is called *peak*
 
 In the case of this repository that would be ```index.js```
 
-Save and run the tests without looking!
+To start the game use this command:
+
+```bash
+./peak index.js
+```
+
+The Peak script will instruct you through the process, simply read the prompts provided and press ENTER when told to, also dont forget to look at the code when it shows it to you, you will be warned before you are shown any code so that you can prepare yourself!
+
+Then after the Peak script has shown you the code you will again be prompted to cover your screen and then press ENTER again to get access back to VIM with the specified file open.
+
+Edit the code (without looking ofcourse) then save and run the tests!
+
+Good Luck!
