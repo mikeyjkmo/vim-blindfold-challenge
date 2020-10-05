@@ -22,11 +22,11 @@ function helloWorldFromArray() {
 }
 
 // Level 4
-// Fix this function
+// Fix this function - rename helloWorld "variable" to "variable"
 function doStuffWithVariable(variable) {
-    let a = wrongVariable + 1;
-    let b = wrongVariable + 2;
-    let c = wrongVariable + 3;
+    let a = helloWorld + 1;
+    let b = helloWorld + 2;
+    let c = helloWorld + 3;
     return a + b + c;
 }
 
